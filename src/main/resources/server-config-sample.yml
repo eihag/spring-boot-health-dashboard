@@ -1,0 +1,19 @@
+applications:
+   - application:
+     applicationName :  Application A
+     servers:
+       - server:
+         serverName   : appServer1
+         healthUrl    : http://localhost:8080/health
+         username     : test
+         password     : dummyPassword
+       - server:
+         serverName   : appServer2
+         ignoreSslCert: true
+         healthUrl    : http://localhost:8080/health
+   - application:
+     applicationName :  Application B
+     servers:
+       - server:
+         serverName   : appServerXYZ
+         healthUrl    : http://localhost:8080/health

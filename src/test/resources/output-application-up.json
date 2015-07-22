@@ -1,0 +1,40 @@
+{
+  "applicationName": "Dummy Application",
+  "servers": [
+    {
+      "serverName": "DummyServer",
+      "healthStatus": "UP",
+      "indicators": [
+        {
+          "indicatorName": "sampleHealthChecker",
+          "healthStatus": "UP",
+          "messages": [
+            {
+              "key": "key",
+              "value": "value"
+            },
+            {
+              "key": "otherKey",
+              "value": "value2"
+            }
+          ]
+        },
+        {
+          "indicatorName": "diskSpace",
+          "healthStatus": "UP",
+          "messages": [
+            {
+              "key": "free",
+              "value": "119051042816"
+            },
+            {
+              "key": "threshold",
+              "value": "10485760"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "healthStatus": "UP"
+}

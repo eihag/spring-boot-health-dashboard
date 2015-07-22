@@ -1,0 +1,69 @@
+<html ng-app="healthApp">
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="controllers.js"></script>
+
+    <link rel="stylesheet" href="custom.css"/>
+</head>
+
+<body ng-controller="HealthCtrl">
+
+<h1>Health Dashboard</h1>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!--  Application  -->
+        <div class="col-lg-3" ng-repeat="application in applications">
+            <div class="panel" ng-class="getPanelHealthClass(application.healthStatus)">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+                        {{application.applicationName}}</h3>
+                </div>
+                <div class="panel-body">
+                    <!-- Servers -->
+                    <ul class="list-group inner">
+                        <li class="list-group-item no-border" ng-repeat="server in application.servers">
+
+                            <h4 ng-class="getBackgroundHealthClass(server.healthStatus)"><span
+                                    class="glyphicon glyphicon-hdd" aria-hidden="true"></span>
+                                {{server.serverName}} <span class="glyphicon"
+                                                            ng-class="getGlyphClass(server.healthStatus)"
+                                                            aria-hidden="true"></span></h4>
+                            <!-- Indicators -->
+                            <ul class="list-group inner">
+                                <li class="list-group-item" ng-repeat="indicator in server.indicators">
+                                    <h5 class="list-group-item-heading"
+                                        ng-class="getBackgroundHealthClass(indicator.healthStatus)">
+                                        {{indicator.indicatorName}} <span class="glyphicon"
+                                                                          ng-class="getGlyphClass(indicator.healthStatus)"
+                                                                          aria-hidden="true"></span></h5>
+                                    <!-- Indicator Messages -->
+                                    <h6 class="list-group-item-text" ng-repeat="message in indicator.messages">
+                                        <strong>{{message.key}}: </strong> {{message.value}}
+                                    </h6>
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--  Applications end -->
+    </div>
+</div>
+
+
+<h5><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Last updated : {{lastUpdated}}</h5>
+
+</body>
+</html>

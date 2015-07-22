@@ -1,0 +1,18 @@
+endpoints.health.sensitive : false
+
+health.applications:
+   - applicationName :  Application A
+     servers:
+       - serverName   : appServer1
+         healthUrl    : http://localhost:8080/health
+         username     : test
+         password     : dummyPassword
+       - serverName   : appServer2
+         healthUrl    : http://localhost:8080/health
+
+   - applicationName :  Application B
+     servers:
+       - serverName   : appServerXYZ
+         healthUrl    : http://localhost:8080/health
+       - serverName   : noGood
+         healthUrl    : http://nonexisting:8080/health

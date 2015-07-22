@@ -1,0 +1,1 @@
+{"status":"UP","sampleHealthChecker":{"status":"UP","key":"value","otherKey":"value2"},"diskSpace":{"status":"UP","free":119051042816,"threshold":10485760}}

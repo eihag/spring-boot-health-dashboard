@@ -1,0 +1,1 @@
+{"status":"DOWN","sampleHealthChecker":{"status":"DOWN","error":"java.lang.RuntimeException: asdfasdf 2"},"diskSpace":{"status":"UP","free":119058001920,"threshold":10485760}}

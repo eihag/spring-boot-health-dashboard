@@ -1,0 +1,36 @@
+{
+  "applicationName": "Dummy Application",
+  "servers": [
+    {
+      "serverName": "DummyServer",
+      "healthStatus": "DOWN",
+      "indicators": [
+        {
+          "indicatorName": "sampleHealthChecker",
+          "healthStatus": "DOWN",
+          "messages": [
+            {
+              "key": "error",
+              "value": "java.lang.RuntimeException: asdfasdf 2"
+            }
+          ]
+        },
+        {
+          "indicatorName": "diskSpace",
+          "healthStatus": "UP",
+          "messages": [
+            {
+              "key": "free",
+              "value": "119058001920"
+            },
+            {
+              "key": "threshold",
+              "value": "10485760"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "healthStatus": "DOWN"
+}
